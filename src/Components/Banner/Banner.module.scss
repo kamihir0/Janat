@@ -12,18 +12,23 @@
     width: 100%;
     height: 100vh;
     display: flex;
-    img{
+    position: relative;
+
+    img {
         height: 100%;
         position: absolute;
-        left: 805.5px;
+        top: 0;
+        right: 0;
     }
-    div{
-       padding: 170px 0px 0px 140px; 
+
+    div {
+        padding: 170px 0px 0px 140px;
     }
+
     div h1 {
         font-family: 'Oswald', sans-serif;
 
-        color:  red;
+        color: red;
         font-size: 48px;
         font-weight: 800;
         margin-bottom: 60px;
