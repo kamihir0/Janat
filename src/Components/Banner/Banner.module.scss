@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.Banner {
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    img{
+        height: 100%;
+        position: absolute;
+        left: 805.5px;
+    }
+    div{
+       padding: 170px 0px 0px 140px; 
+    }
+    div h1 {
+        font-family: 'Oswald', sans-serif;
+
+        color:  red;
+        font-size: 48px;
+        font-weight: 800;
+        margin-bottom: 60px;
+    }
+
+    div p {
+        font-family: 'DM Sans', sans-serif;
+        color: whitesmoke;
+        width: 600px;
+        font-size: 16px;
+
+    }
+}
