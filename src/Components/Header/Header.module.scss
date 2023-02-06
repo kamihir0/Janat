@@ -7,8 +7,9 @@
 
 .root {
   width: auto;
-  height: 100vh;
+  height: 800px;
   background: url('../../assets/img/headerex2.jpg') center / cover no-repeat;
+
   .banner {
     color: whitesmoke;
 
@@ -22,7 +23,8 @@
       // color: rgb(220, 34, 34);
 
     }
-    button { 
+
+    button {
       font-family: 'DM Sans', sans-serif;
       background-color: black;
       color: white;
@@ -35,10 +37,11 @@
       position: absolute;
       top: 550px;
       left: 140px;
+
       &:hover {
-          background-color: rgb(193, 0, 0);
-          transition: 0.3s;
+        background-color: rgb(193, 0, 0);
+        transition: 0.3s;
       }
-  }
+    }
   }
 }
