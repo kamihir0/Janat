@@ -8,35 +8,58 @@
 
 .Coach {
     background-color: black;
-    height: 100vh;
+    height: 720px;
     font-family: 'DM Sans', sans-serif;
 
     .h1 {
         font-family: 'Oswald', sans-serif;
         color: white;
         font-size: 56px;
-        padding: 120px 0px 120px 140px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 200px;
+        padding: 0 140px 50px;
     }
 
     .centre {
-        background-color: black;
         display: flex;
-        padding-left: 140px;
-        img{
-            margin: 0px 140px 0px 0px;
+        flex-direction: row;
+        justify-content: flex-end;
+        height: 600px;
+        padding: 0 140px;
+        align-items: center;
+        background-color: black;
+        img {
             border-radius: 3px;
         }
+
         h2 {
             color: white;
             font-family: 'Oswald', sans-serif;
             font-size: 30px;
-            padding-top: 150px;
+            display: flex;
         }
-        p{
+
+        p {
             color: white;
             width: 50%;
-            font-size: 16px ;
+            font-size: 16px;
             word-spacing: 2px;
         }
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .h1{
+        text-align: center;
+    }
+    .centre{
+        display: flex;
+    }
+    img{
+        width: 382px;
+        height: 579px;
     }
 }

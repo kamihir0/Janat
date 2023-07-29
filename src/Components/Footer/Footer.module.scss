@@ -13,7 +13,6 @@
     background-color: black;
     color: white;
     display: flex;
-
     div {
         width: 50%;
 
@@ -29,9 +28,6 @@
             font-family: 'DM Sans', sans-serif;
         }
 
-        .mess {
-            margin-top: 60px;
-        }
 
         a {
             font-size: 30px;
@@ -39,3 +35,12 @@
         }
     }
 }
+@media (max-width: 768px) {
+    .Footer{
+        display: block;
+        div{
+            margin-bottom: 29px;
+        }
+    }
+}
+  

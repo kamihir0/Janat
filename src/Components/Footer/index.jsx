@@ -11,7 +11,13 @@ const Footer = () => {
                 <h2>РАБОЧЕЕ ВРЕМЯ</h2>
                 <p>Понедельник - Суббота 08:00 - 24:00</p>
                 <p>Воскресенье выходной</p>
-                <div className={cls.mess}>
+                
+            </div>
+            <div>
+                <h2>АДРЕС</h2>
+                <p>​Г.Ош, Алишера Навои, 68/1</p>
+            </div>
+           <div className={cls.mess}>
                     {
                         mess.map(({id, route, icon}) => (
                             <a href={route} key={id}>
@@ -19,13 +25,9 @@ const Footer = () => {
                             </a>
                         ))
                     }
-                </div>
             </div>
-            <div>
-                <h2>АДРЕС</h2>
-                <p>​Г.Ош, Алишера Навои, 68/1</p>
-            </div>
-        </div>
+        </div> 
+        
     )
 }
 

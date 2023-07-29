@@ -6,7 +6,7 @@ import cls from './Banner.module.scss'
 const Banner = () => {
     return (
         <div className={cls.Banner}>
-            <div>
+            <div className={cls.banner1}>
                 <h1>O НАС</h1>
                 <p>Мы здесь не для того, чтобы увлечь вас фитнесом, мы здесь для того, чтобы мотивировать вас стремиться к своим целям.</p>
                 <br />

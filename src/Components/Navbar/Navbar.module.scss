@@ -16,19 +16,86 @@
     padding: 38px 20px 0px 140px;
   }
 
-  ul {
+  .show {
     font-family: 'DM Sans', sans-serif;
     display: flex;
+
+    li {
+      cursor: pointer;
+      margin: 43px 20px 0px 20px;
+      font-size: 19px;
+
+      &:hover {
+        border-bottom: 1px solid white;
+        transition: 0.2s;
+      }
+    }
   }
 
-  li {
-    cursor: pointer;
-    margin: 43px 20px 0px 20px;
-    font-size: 19px;
-    &:hover {
-      border-bottom: 1px solid white;
-      transition: 0.2s;
+  .mobileWrapper {
+    position: fixed;
+    width: 200px;
+    height: auto;
+    background-color: black   ;
+    right: -50%;
+    transition: 0.3s ease-in-out;
+
+  }
+
+  .burgerMenu {
+    display: none;
+  }
+
+}
+
+// .showBurgerMenu {
+//   display: block !important;
+// }
+
+
+@media (max-width: 768px) {
+  .root {
+    width: auto;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 1.5rem;
+    position: relative;
+    z-index: 3;
+
+    .navbarLogo {
+      h2 {
+        padding: 0;
+      }
+    }
+    .show {
+      display: none;
+    }
+    .mobileWrapperActive {
+      position: absolute;
+      width: 300px;
+      height: auto;
+      right: 0%;
+      background-color: black;
+    }
+
+    .burgerMenu {
+      display: block;
+      padding: none;
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 20px;
+    }
+    .burgerMenu1{
+      background: transparent;
+      color: white;
+      right: 0;
+      border: none;
+      font-size: 20px;
+    }
+    .mobileList{
+      font-size: 18px;
     }
   }
 }
-

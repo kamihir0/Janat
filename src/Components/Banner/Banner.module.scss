@@ -9,24 +9,31 @@
 
 .Banner {
     background-color: black;
-    width: 100%;
-    height: 100vh;
+    height: 720px;
     display: flex;
     position: relative;
 
+    .banner1 {
+        display: flex;
+        flex-direction: column;
+        height: 500px;
+    }
+
     img {
         height: 100%;
+        width: auto;
         position: absolute;
         right: 0px;
+        z-index: 1;
     }
 
     div {
+        z-index: 2;
         padding: 170px 0px 0px 140px;
     }
 
     div h1 {
         font-family: 'Oswald', sans-serif;
-
         color: red;
         font-size: 48px;
         font-weight: 800;

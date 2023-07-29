@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 
 
 const Header = () => {
+ 
     const navigate = useNavigate()
     const goToPricePage = () => navigate('/Price')
     return (
@@ -12,9 +13,8 @@ const Header = () => {
             <header className={cls.root}>
                 <Navbar />
                 <div className={cls.banner}>
-                    <h1></h1>
                     <h2>Дайте себе возможность сделать себя лучше</h2>
-                    <button onClick={( ) => goToPricePage()}>Давай, начинай!</button>
+                    <button onClick={goToPricePage}>Давай, начинай!</button>
                 </div>
             </header>
         </div>
