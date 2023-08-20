@@ -1,79 +1,57 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import cls from './Navbar.module.scss'
-import { useNavigate } from 'react-router-dom'
-import { links } from '../Utils';
-import { FaBars as BurgerMenu } from 'react-icons/fa'
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import { slide as Menu } from 'react-burger-menu';
-import { AiOutlineClose } from 'react-icons/ai';
-// import { scrolling, useAnchor } from '../Hooks';
+import cls from './Navbar.module.scss';
+import { links } from '../Utils';
+import { Link } from 'react-scroll'
 
 const Navbar = () => {
-  <Link
-    activeClass="active"
-    to="section1"
-    spy={true}
-    smooth={true}
-    offset={-70}
-    duration={500}
-  ></Link>
+  const navigate = useNavigate();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const [isHide, setIsHide] = React.useState(false)
-  const navigate = useNavigate()
+  const goToMainPage = () => {
+    navigate('/');
+    setIsMobileMenuOpen(false);
+  };
 
-  const goToMainPage = () => navigate('/')
-
-  const open = () => {
-    setIsHide(true)
-  }
-
-  const close = () => {
-    setIsHide(false)
-  }
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   return (
     <nav className={cls.root}>
       <div className={cls.navbarLogo}>
-        <h2 onClick={() => goToMainPage()}>
-          JANAT CLUB
-        </h2>
+        <h2 onClick={goToMainPage}>JANAT CLUB</h2>
       </div>
       <ul className={cls.show}>
-        {
-          links.map(({ id, title, to }) => (
+        {links.map(({ id, title, to }) => (
+          <li key={id}>
+            <Link to={to} smooth={true} duration={500} offset={-50} spy={true}>
+              {title}
+            </Link>
+          </li>
+        ))}
+      </ul>
+      <div className={isMobileMenuOpen ? cls.mobileWrapperActive : cls.mobileWrapper}>
+        <button className={cls.burgerMenu1} onClick={toggleMobileMenu}>
+          <FaTimes />
+        </button>
+        <ul className={cls.mobileList}>
+          {links.map(({ id, title, to }) => (
             <li key={id}>
-              <Link to={to}>
+              <Link to={to} smooth={true} duration={500} offset={-50} spy={true}>
                 {title}
               </Link>
             </li>
-          ))
-
-        }
-      </ul>
-      <div className={!isHide ? cls.mobileWrapper : cls.mobileWrapperActive}>
-        <button className={cls.burgerMenu1} onClick={close}>
-          <AiOutlineClose />
-        </button>
-        <ul className={cls.mobileList}>
-          {
-            links.map(({ id, title, to }) => (
-              <li key={id}>
-                <Link to={to}>
-                  {title}
-                </Link>
-              </li>
-            ))
-          }
+          ))}
         </ul>
-
       </div>
-      <button className={cls.burgerMenu} onClick={open}>
-        <BurgerMenu />
-
+      <button className={cls.burgerMenu} onClick={toggleMobileMenu}>
+        <FaBars />
       </button>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

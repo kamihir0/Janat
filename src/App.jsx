@@ -1,22 +1,22 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import { ReactDOM } from 'react-dom/client'
 import Main from './Pages/Main'
-import Coach from './Pages/Coach'
+import Coaches from './Pages/Coaches'
 import Price from './Pages/Price'
 import Schedule from './Pages/Schedule'
+import Navbar from './Components/Navbar'
+import Detail from './Pages/ProgramDetail/Detail';
 
-function App () {
+function App() {
   return (
-    <div>
+    <>
+      <Navbar />
       <Routes>
-        <Route path='*' element={<h1>Not Found</h1>} />
         <Route path='/' element={<Main />} />
-        <Route path='/Coach' element={<Coach/>} />
-        <Route path='/Price' element={<Price/>} />
-        <Route path='/Schedule' element={<Schedule/>} />
+        <Route path='/detail/:id' element={<Detail />} />
+        <Route path='*' element={<h1>Not Found</h1>} />
       </Routes>
-    </div>
+    </>
   )
 }
 

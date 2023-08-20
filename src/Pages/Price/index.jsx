@@ -1,14 +1,13 @@
 import React from 'react'
 import Footer from '../../Components/Footer'
-import Mid from '../../Components/Mid'
-import Navbar from '../../Components/Navbar'
+import Mid from '../../Components/HeadingTitle'
 import cls from './Price.module.scss'
 
 
 const Price = () => {
     return (
         <div className={cls.Price}>
-            <Navbar />
+            {/* <Navbar /> */}
             <h1 className={cls.h11}>ЦЕНА</h1>
             <div className={cls.centre2}>
                 <div>

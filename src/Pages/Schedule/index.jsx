@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../../Components/Navbar'
-import Mid from '../../Components/Mid'
+import Mid from '../../Components/HeadingTitle'
 import Footer from '../../Components/Footer'
 import cls from './Schedule.module.scss'
 

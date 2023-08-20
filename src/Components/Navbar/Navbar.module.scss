@@ -2,16 +2,20 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
 
 .root {
+  position: absolute;
   display: flex;
   color: white;
   width: 100%;
+  z-index: 99;
+  top: 0;
 
   h2 {
     cursor: pointer;
     font-size: 23px;
     font-weight: 700;
     font-family: 'Archivo Black', sans-serif;
-    color: rgb(220, 34, 34);
+    // color: rgb(220, 34, 34);
+    color: #FD3C3D;
     text-align: center;
     padding: 38px 20px 0px 140px;
   }
@@ -36,7 +40,7 @@
     position: fixed;
     width: 200px;
     height: auto;
-    background-color: black   ;
+    background-color: black;
     right: -50%;
     transition: 0.3s ease-in-out;
 
@@ -68,9 +72,11 @@
         padding: 0;
       }
     }
+
     .show {
       display: none;
     }
+
     .mobileWrapperActive {
       position: absolute;
       width: 300px;
@@ -87,14 +93,16 @@
       color: white;
       font-size: 20px;
     }
-    .burgerMenu1{
+
+    .burgerMenu1 {
       background: transparent;
       color: white;
       right: 0;
       border: none;
       font-size: 20px;
     }
-    .mobileList{
+
+    .mobileList {
       font-size: 18px;
     }
   }
