@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { coachesData, sportsData } from '../../Components/Utils'
 import Banner from '../../Components/Banner/Banner'
@@ -7,10 +7,12 @@ import HeadingTitle from '../../Components/HeadingTitle'
 import CoachCard from '../../Components/Cards/Coach/CoachCard'
 import Footer from '../../Components/Footer'
 import PriceTable from '../../Components/PriceTable/PriceTable'
+import { Button } from '../../Components/Buttons/Button'
 
 const Detail = () => {
   const { id } = useParams();
   const headerTitle = ['Детали программы', id];
+
   const filteredData = sportsData.find(item => item.label === id);
 
   const sportInfo = {
@@ -46,22 +48,79 @@ const Detail = () => {
 
   const tableInfo = [
     {
-      title: 'Утро без ограничений',
+      title: 'Утро-Дневной без ограничений',
       noLimits: true,
       detail: [
         {
           validity: '28 дней',
           timeStart: '08:00',
-          timeEnd: '23:00',
+          timeEnd: '16:00',
+          price: 3000,
+          freezing: false,
+        },
+        {
+          validity: '84 дней',
+          timeStart: '08:00',
+          timeEnd: '16:00',
+          freezing: 6,
+          price: '7200',
+        },
+      ]
+    },
+    {
+      title: 'Утро-Дневной (16 посещений)',
+      detail: [
+        {
+          validity: '28 дней',
+          timeStart: '08:00',
+          timeEnd: '16:00',
+          price: 2400,
+          freezing: false,
+        },
+        {
+          validity: '84 дней',
+          timeStart: '08:00',
+          timeEnd: '16:00',
+          freezing: 6,
+          price: '5500',
+        },
+      ]
+    },
+    {
+      title: 'Утро-Дневной(12 посещений)',
+      detail: [
+        {
+          validity: '28 дней',
+          timeStart: '08:00',
+          timeEnd: '16:00',
           price: 2000,
           freezing: false,
         },
         {
-          validity: '3-месяц',
+          validity: '84 дней',
           timeStart: '08:00',
-          timeEnd: '23:00',
+          timeEnd: '16:00',
           freezing: 6,
-          price: '7500',
+          price: '4800',
+        },
+      ]
+    },
+    {
+      title: 'Утро-вечерний без ограничений',
+      detail: [
+        {
+          validity: '28 дней',
+          timeStart: '08:00',
+          timeEnd: '00:00',
+          price: 3000,
+          freezing: false,
+        },
+        {
+          validity: '3 месяца',
+          timeStart: '08:00',
+          timeEnd: '00:00',
+          price: '8400',
+          freezing: 6,
         },
       ]
     },
@@ -71,16 +130,16 @@ const Detail = () => {
         {
           validity: '28 дней',
           timeStart: '08:00',
-          timeEnd: '23:00',
-          price: 2500,
+          timeEnd: '00:00',
+          price: 3000,
           freezing: false,
         },
         {
           validity: '84 дней',
           timeStart: '08:00',
-          timeEnd: '23:00',
+          timeEnd: '00:00',
           freezing: 6,
-          price: '7000',
+          price: '7200',
         },
       ]
     },
@@ -90,100 +149,125 @@ const Detail = () => {
         {
           validity: '28 дней',
           timeStart: '08:00',
-          timeEnd: '23:00',
+          timeEnd: '00:00',
           price: 2500,
           freezing: false,
         },
         {
           validity: '84 дней',
           timeStart: '08:00',
-          timeEnd: '23:00',
+          timeEnd: '00:00',
           freezing: 6,
-          price: '7000',
+          price: '6000',
         },
       ]
     },
     {
-      title: 'Утро дневной без ограничений',
+      title: 'Разовое посещение',
       noLimits: true,
       detail: [
         {
-          validity: '28 дней',
-          timeStart: '08:00',
-          timeEnd: '23:00',
-          price: 2500,
+          // validity: '28 дней',
+          timeStart: '16:00',
+          timeEnd: '00:00',
+          price: 300,
           freezing: false,
-        },
-        {
-          validity: '84 дней',
-          timeStart: '08:00',
-          timeEnd: '23:00',
-          freezing: 6,
-          price: '7000',
-        },
-      ]
-    },
-    {
-      title: 'Утро дневной (16 посещений)',
-      detail: [
-        {
-          validity: '28 дней',
-          timeStart: '08:00',
-          timeEnd: '23:00',
-          price: 2500,
-          freezing: false,
-        },
-        {
-          validity: '84 дней',
-          timeStart: '08:00',
-          timeEnd: '23:00',
-          freezing: 6,
-          price: '7000',
-        },
-      ]
-    },
-    {
-      title: 'Утро дневной (12 посещений)',
-      detail: [
-        {
-          validity: '28 дней',
-          timeStart: '08:00',
-          timeEnd: '23:00',
-          price: 2500,
-          freezing: false,
-        },
-        {
-          validity: '84 дней',
-          timeStart: '08:00',
-          timeEnd: '23:00',
-          freezing: 6,
-          price: '7000',
         },
       ]
     },
   ]
-
-  const tableInfoMMA = [
+  const tableInfoWomen = [
     {
-      title: 'MMA (12 посещений)',
-      mma: true,
+      title: 'Для дам (12 посещений)',
       detail: [
         {
           validity: '28 дней',
-          timeStart: '08:00',
-          timeEnd: '23:00',
-          age: "14лет и выше",
+          // timeStart: '08:00',
+          // timeEnd: '16:00',
+          price: 2000,
+          freezing: false,
+        },
+        {
+          validity: '84 дней',
+          // timeStart: '08:00',
+          // timeEnd: '16:00',
+          freezing: 6,
+          price: '4800',
+        },
+      ]
+    },
+    {
+      title: 'Для дам (16 посещений)',
+      detail: [
+        {
+          validity: '28 дней',
+          // timeStart: '08:00',
+          // timeEnd: '16:00',
           price: 2500,
           freezing: false,
         },
         {
-          validity: '28 дней',
-          timeStart: '08:00',
-          timeEnd: '23:00',
-          age: '8лет-14лет',
-          freezing: false,
-          price: '1500',
+          validity: '84 дней',
+          // timeStart: '08:00',
+          // timeEnd: '16:00',
+          freezing: 6,
+          price: '6000',
         },
+      ]
+    },
+
+  ]
+
+  const tableInfoMMA = [
+    {
+      title: 'MMA сборный (12-посещений)',
+      // mma: true,
+      detail: [
+        {
+          validity: '28 дней',
+          timeStart: '18:00',
+          timeEnd: '20:00',
+          // age: "14лет и выше",
+          price: 2500,
+          freezing: false,
+        },
+      ]
+    },
+    {
+      title: 'MMA сборный (20-посещений)',
+      // mma: true,
+      detail: [
+        {
+          validity: '28 дней',
+          timeStart: '18:00',
+          timeEnd: '20:00',
+          // age: "14лет и выше",
+          price: 3500,
+          freezing: false,
+        },
+      ]
+    },
+
+    {
+      title: 'MMА (12-посещений)',
+      // mma: true,
+      detail: [
+        {
+          validity: '28 дней',
+          timeStart: '20:00',
+          timeEnd: '22:00',
+          // age: "14лет и выше",
+          price: 2000,
+          freezing: false,
+        },
+        // {
+        //   validity: '28 дней',
+        //   timeStart: '08:00',
+        //   timeEnd: '23:00',
+        //   // age: '8лет-14лет',
+        //   freezing: false,
+        //   price: '1500',
+        // },
       ]
     },
   ]
@@ -193,17 +277,10 @@ const Detail = () => {
       detail: [
         {
           validity: '28 дней',
-          timeStart: '08:00',
-          timeEnd: '23:00',
-          price: 3000,
+          timeStart: '08:30',
+          timeEnd: '10:30',
+          price: 2000,
           freezing: false,
-        },
-        {
-          validity: '28 дней',
-          timeStart: '08:00',
-          timeEnd: '23:00',
-          freezing: false,
-          price: '2500',
         },
       ]
     },
@@ -211,55 +288,69 @@ const Detail = () => {
   const tableInfoTaek = [
     {
       title: 'Таэквандо (12 посещений)',
-      mma: true,
+      // mma: true,
       detail: [
         {
           validity: '28 дней',
-          timeStart: '16:00',
-          timeEnd: '18:00',
-          age: "Старшая группа",
-          price: 3000,
+          timeStart: '8:30',
+          timeEnd: '10:30',
           freezing: false,
-        },
-        {
-          validity: '28 дней',
-          timeStart: '14:00',
-          timeEnd: '16:00',
-          age: 'Младшая группа',
-          freezing: false,
-          price: '2500',
+          price: '2000',
         },
       ]
     },
   ]
 
-  let tablePlans;
+  let tableDesc;
   if (id === 'MMA') {
-    tablePlans = tableInfoMMA;
+    tableDesc = tableInfoMMA;
   } else if (id === 'Дзюдо')
-    tablePlans = tableInfoJudo;
+    tableDesc = tableInfoJudo;
   else if (id === 'Таэквандо') {
-    tablePlans = tableInfoTaek;
+    tableDesc = tableInfoTaek;
 
   } else {
-    tablePlans = tableInfo;
+    tableDesc = tableInfo;
   }
+  const [tablePlans, setTablePlans] = useState(tableInfo);
+
+  const setMen = () => {
+    setTablePlans(tableInfo);
+  };
+
+  const setWomen = () => {
+    setTablePlans(tableInfoWomen);
+  };
 
   return (
     <>
       <Banner title={headerTitle} content={defaultBannerContent} buttonText="Начать!" bannerUrl={sportInfo[filteredData?.label]?.bannerUrl} />
       <HeadingTitle>Занятия {id}</HeadingTitle>
       <div className={cls.wrapper}>
+        {filteredData?.label === 'Фитнес' && (
+          <div className={cls.buttonParrent}>
+            <Button variant="outline" action={setMen}>
+              Мужчинам
+            </Button>
+            <Button variant="outline" action={setWomen}>
+              Для дам
+            </Button>
+          </div>
+        )}
         <div className={cls.right}>
-          <PriceTable plans={tablePlans} />
+          {id.trim() === 'Фитнес' ? (
+            <PriceTable plans={tablePlans} />
+          ) : (
+            <PriceTable plans={tableDesc} />
+          )}
         </div>
       </div>
-      <HeadingTitle>Тренер {id}</HeadingTitle>
-      <div className={cls.coachWrapper}>
+      {/* <HeadingTitle>Тренер {id}</HeadingTitle> */}
+      {/* <div className={cls.coachWrapper}>
         <div className={cls.coach}>
           <CoachCard {...coachForSport[0]} />
         </div>
-      </div>
+      </div> */}
       <Footer />
     </>
   );

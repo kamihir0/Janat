@@ -12,7 +12,7 @@ const PriceTable = ({ plans }) => {
       <tbody>
         {plans.map((plan, index) => (
           <tr key={index}>
-            <td>
+            <td colSpan='4'>
               <table>
                 <caption className={plan.noLimits ? cls.noLimits : cls.caption}>{plan.title}</caption>
                 <thead>

@@ -1,30 +1,76 @@
 .Footer {
 	height: 300px;
-	padding-left: 140px;
-	padding-top: 140px;
+	padding: 4rem 4rem 12px 4rem;
 	background-color: black;
 	color: white;
 	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	@media (max-width:1305px) {
+		width: 100%;
+		padding: 2rem 2rem 0px 2rem;
+		justify-content: space-between;
+
+	}
+
+	.footer_inner {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+
+		@media (max-width:600px) {
+			flex-direction: column;
+		}
+	}
 
 	div {
-		width: 50%;
+
+		// width: 50%;
+		@media (max-width:600px) {
+			gap: 20px;
+		}
 
 		h2 {
 			color: red;
 			font-weight: 800;
 			font-family: 'Oswald', sans-serif;
 			margin-bottom: 30px;
+
+			@media (max-width:600px) {
+				margin: 0;
+			}
 		}
 
 		p {
 			margin: 0px 0px 5px 0px;
 			font-family: 'DM Sans', sans-serif;
+
+			@media (max-width:600px) {
+				margin: 0;
+			}
 		}
 
 
 		a {
 			font-size: 30px;
 			padding: 0px 20px 0px 0px;
+
+			@media (max-width:600px) {
+				margin: 0;
+			}
+		}
+	}
+
+	.mess {
+
+		div {
+			display: flex;
+
+			@media (max-width:600px) {
+				gap: 6px;
+				margin-top: 8px;
+			}
 		}
 	}
 }
@@ -33,8 +79,6 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #212121;
-	padding: 8px 4rem;
 
 	.bottomFooterContent {
 		display: flex;
@@ -58,12 +102,12 @@
 	}
 }
 
-@media (max-width: 768px) {
-	.Footer {
-		display: block;
+// @media (max-width: 768px) {
+// 	.Footer {
+// 		display: block;
 
-		div {
-			margin-bottom: 29px;
-		}
-	}
-}
+// 		div {
+// 			margin-bottom: 29px;
+// 		}
+// 	}
+// }

@@ -4,15 +4,24 @@
   align-items: center;
   // padding: 2rem;
   margin-bottom: 60px;
+  flex-direction: column;
+  gap: 20px;
+
+  .buttonParrent {
+    width: 80%;
+    display: flex;
+    justify-content: end;
+    gap: 4px;
+  }
 
   .right {
+    width: 80%;
     height: 100%;
     display: flex;
 
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    width: 80%;
     background-color: #31343C;
     // background-color: white;
 

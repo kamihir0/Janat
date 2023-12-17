@@ -15,9 +15,15 @@ const Program = ({ label, url }) => {
           <h1>{label}</h1>
         </div>
         <div className={cls.card_bottom}>
-          <Button variant='outline' action={handleNavigateTo}>Детали программы</Button>
+          <Button
+            variant='outline'
+            action={handleNavigateTo}
+            customStyles={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
+          >
+            Детали программы
+          </Button>
         </div>
-      </div>
+      </div >
     </>
   )
 }

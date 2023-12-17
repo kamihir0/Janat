@@ -2,4 +2,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   background-color: #333;
+
+  @media (max-width:1025px) {
+    grid-template-columns: 1fr;
+  }
 }

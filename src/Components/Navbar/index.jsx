@@ -33,25 +33,48 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
-      <div className={isMobileMenuOpen ? cls.mobileWrapperActive : cls.mobileWrapper}>
-        <button className={cls.burgerMenu1} onClick={toggleMobileMenu}>
-          <FaTimes />
-        </button>
-        <ul className={cls.mobileList}>
-          {links.map(({ id, title, to }) => (
-            <li key={id}>
-              <Link to={to} smooth={true} duration={500} offset={-50} spy={true}>
-                {title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+
+      {
+        isMobileMenuOpen && (
+          <div className={cls.mobileWrapper}>
+            <button className={cls.burgerMenu1} onClick={toggleMobileMenu}>
+              <FaTimes />
+            </button>
+            <ul className={cls.mobileList}>
+              {links.map(({ id, title, to }) => (
+                <li key={id} >
+                  <Link to={to} smooth={true} duration={500} offset={-50} spy={true} >
+                    {title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
       <button className={cls.burgerMenu} onClick={toggleMobileMenu}>
         <FaBars />
       </button>
     </nav>
+
   );
 };
 
 export default Navbar;
+// <Menu
+//   right
+//   isOpen={isMobileMenuOpen}
+//   onClose={toggleMobileMenu}
+//   width={"auto"}
+// // customBurgerIcon={<FaTimes fontSize={32} />}
+// >
+//   <ul className={cls.mobileList}>
+//     {links.map(({ id, title, to }) => (
+//       <li key={id}>
+//         <Link to={to} smooth={true} duration={500} offset={-50} spy={true}>
+//           {title}
+//         </Link>
+//       </li>
+//     ))}
+//   </ul>
+// </Menu>

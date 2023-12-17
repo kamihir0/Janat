@@ -4,16 +4,16 @@ import cls from './Banner.module.scss'
 
 const PhraseBanner = ({ children, progress }) => {
 
-	const styles = {
-		position: 'relative',
-		display: 'inline-block',
-		fontSize: '44px',
-		textTransform: 'uppercase',
-		letterSpacing: '4px',
-		color: 'black',
-		margin: 0,
-		paddingBottom: '10px',
-	};
+	// const styles = {
+	// 	position: 'relative',
+	// 	display: 'inline-block',
+	// 	fontSize: '44px',
+	// 	textTransform: 'uppercase',
+	// 	letterSpacing: '4px',
+	// 	color: 'black',
+	// 	margin: 0,
+	// 	paddingBottom: '10px',
+	// };
 
 	const afterStyles = {
 		content: '',
@@ -28,9 +28,9 @@ const PhraseBanner = ({ children, progress }) => {
 
 	return (
 		<div className={cls.banner}>
-			<h1 style={styles}>
+			<h1>
 				{children}
-				<span style={afterStyles}></span>
+				<span style={afterStyles} ></span>
 			</h1>
 		</div>
 	)

@@ -8,7 +8,7 @@ import { v4 as uid } from 'uuid';
 const Coaches = () => {
 	return (
 		<>
-			<HeadingTitle>Наши тренеры</HeadingTitle>
+			<HeadingTitle to='сoach'>Наши тренеры</HeadingTitle>
 			<div className={cls.Coach}>
 				{coachesData.map((item, index) => (
 					<CoachCard {...item} key={uid()} />

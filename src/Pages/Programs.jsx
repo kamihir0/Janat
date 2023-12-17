@@ -8,7 +8,7 @@ const Programs = () => {
 
   return (
     <>
-      <HeadingTitle>Наши программы</HeadingTitle>
+      <HeadingTitle to='program'>Наши программы</HeadingTitle>
       <div className={cls.cardWrapper} >
         {sportsData.map((item => (
           <CoachCard {...item} key={item.id} />

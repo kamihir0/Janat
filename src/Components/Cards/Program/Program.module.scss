@@ -8,6 +8,10 @@
   justify-content: space-between;
   padding: 2rem 0;
 
+  @media (max-width:1302px) {
+    width: 100%;
+  }
+
   &::before {
     content: '';
     position: absolute;
@@ -21,7 +25,7 @@
     transition: opacity 0.3s ease-in-out;
   }
 
-  &:hover::before{
+  &:hover::before {
     opacity: 1;
   }
 
@@ -35,11 +39,33 @@
       text-transform: uppercase;
       font-size: 40px;
       color: white;
+
+      @media (max-width:426px) {
+        font-size: 32px;
+      }
     }
   }
 
   .card_bottom {
-    background-color: rgba(0, 0, 0, 0.5);
     color: white;
+
+    @media (max-width:653px) {
+      padding: 0 12px;
+    }
+
+    @media (max-width:523px) {
+      padding: 0;
+    }
+
+    @media (max-width:337px) {
+      display: flex;
+      justify-content: center;
+    }
+
+    button {
+      @media (max-width:337px) {
+        width: 90%;
+      }
+    }
   }
 }
