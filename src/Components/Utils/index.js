@@ -31,7 +31,7 @@ export const mess = [
   {
     id: 2,
     icon: <BsInstagram />,
-    route: 'https://www.instagram.com/fitness_club_janat/'
+    route: 'https://www.instagram.com/fitness_janat?igshid=OGQ5ZDc2ODk2ZA%3D%3D'
   },
 ]
 export const sportsData = [

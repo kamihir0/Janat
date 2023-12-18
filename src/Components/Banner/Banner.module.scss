@@ -38,19 +38,31 @@
     text-align: center;
     color: white;
 
-    @media (max-width:769px) {
+    @media (max-width:1025px) {
       width: 90%;
       gap: 34px;
+    }
+
+    @media (max-width:566px) {
+      margin-top: 80px;
+    }
+
+    @media (max-width:500px) {
+      width: 100%;
+
     }
 
     @media (max-width:426px) {
       width: 95%;
     }
 
+    @media (max-width:410px) {
+      margin-top: 0px;
+    }
+
     h1 {
       display: flex;
       flex-direction: column;
-
       font-size: 36px;
       color: #ffffff;
       font-size: 36px;
@@ -61,12 +73,17 @@
       letter-spacing: 1px;
 
       @media (max-width:769px) {
-        font-size: 32px;
+        font-size: 28px;
+        line-height: 16px;
       }
 
       @media (max-width:500px) {
-        font-size: 28px;
+        line-height: 8px;
 
+      }
+
+      @media (max-width:410px) {
+        font-size: 20px;
       }
 
       .bannerTitle {
@@ -82,11 +99,11 @@
           letter-spacing: 0.2em;
 
           @media (max-width:769px) {
-            font-size: 84px;
+            font-size: 64px;
           }
 
           @media (max-width:500px) {
-            font-size: 60px;
+            font-size: 50px;
 
           }
         }
@@ -101,9 +118,13 @@
       color: #fff;
       font: 400 20px/30px "Montserrat", Sans-serif;
 
-      @media (max-width:500px) {
+      @media (max-width:769px) {
         font-size: 18px;
+      }
 
+      @media (max-width:410px) {
+        font-size: 16px;
+        line-height: 20px;
       }
     }
   }

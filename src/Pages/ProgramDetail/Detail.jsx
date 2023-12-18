@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { coachesData, sportsData } from '../../Components/Utils'
 import Banner from '../../Components/Banner/Banner'
 import cls from '../styles/Detail.module.scss'
@@ -8,9 +8,10 @@ import CoachCard from '../../Components/Cards/Coach/CoachCard'
 import Footer from '../../Components/Footer'
 import PriceTable from '../../Components/PriceTable/PriceTable'
 import { Button } from '../../Components/Buttons/Button'
-
+import { GoArrowLeft } from "react-icons/go";
 const Detail = () => {
   const { id } = useParams();
+  const navigate = useNavigate()
   const headerTitle = ['Детали программы', id];
 
   const filteredData = sportsData.find(item => item.label === id);
@@ -322,9 +323,25 @@ const Detail = () => {
     setTablePlans(tableInfoWomen);
   };
 
+  const handleNavigateTo = () => {
+    navigate('/')
+    window.scrollTo({ behavior: "smooth", top: 0, })
+  }
+
+
   return (
     <>
-      <Banner title={headerTitle} content={defaultBannerContent} buttonText="Начать!" bannerUrl={sportInfo[filteredData?.label]?.bannerUrl} />
+      <div className={cls.relative_button}>
+        <button onClick={handleNavigateTo}>
+          <GoArrowLeft />
+        </button>
+      </div>
+      <Banner
+        title={headerTitle}
+        content={defaultBannerContent}
+        buttonText="Начать!"
+        bannerUrl={sportInfo[filteredData?.label]?.bannerUrl}
+      />
       <HeadingTitle>Занятия {id}</HeadingTitle>
       <div className={cls.wrapper}>
         {filteredData?.label === 'Фитнес' && (

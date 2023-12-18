@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaTimes } from 'react-icons/fa';
+// import { CiMenuFries } from "react-icons/ci";
+// import { CiMenuBurger } from "react-icons/ci";
+import { RiMenu3Fill } from "react-icons/ri";
+import { LiaTimesSolid } from "react-icons/lia";
 import { slide as Menu } from 'react-burger-menu';
 import cls from './Navbar.module.scss';
 import { links } from '../Utils';
 import { Link } from 'react-scroll'
+import { FaPhone } from "react-icons/fa";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -32,13 +37,14 @@ const Navbar = () => {
             </Link>
           </li>
         ))}
+        <li><a href='tel:0556160404'>Позвонить</a> <FaPhone /></li>
       </ul>
 
       {
         isMobileMenuOpen && (
           <div className={cls.mobileWrapper}>
             <button className={cls.burgerMenu1} onClick={toggleMobileMenu}>
-              <FaTimes />
+              <LiaTimesSolid />
             </button>
             <ul className={cls.mobileList}>
               {links.map(({ id, title, to }) => (
@@ -53,7 +59,7 @@ const Navbar = () => {
         )
       }
       <button className={cls.burgerMenu} onClick={toggleMobileMenu}>
-        <FaBars />
+        <RiMenu3Fill />
       </button>
     </nav>
 

@@ -14,6 +14,11 @@
 
 	}
 
+	@media (max-width:600px) {
+		height: auto;
+		padding: 2rem;
+	}
+
 	.footer_inner {
 		width: 100%;
 		display: flex;
@@ -75,32 +80,6 @@
 	}
 }
 
-.bottomFooter {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	.bottomFooterContent {
-		display: flex;
-		flex-direction: column;
-		gap: 4px;
-		color: white;
-
-		h4 {
-			text-transform: uppercase;
-
-			span {
-				&:first-child {
-					text-transform: capitalize;
-				}
-
-				&:last-child {
-					color: red;
-				}
-			}
-		}
-	}
-}
 
 // @media (max-width: 768px) {
 // 	.Footer {

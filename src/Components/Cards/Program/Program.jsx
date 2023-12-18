@@ -6,7 +6,10 @@ import { useNavigate } from 'react-router-dom'
 const Program = ({ label, url }) => {
 
   const navigate = useNavigate()
-  const handleNavigateTo = () => navigate(`/detail/${label}`)
+  const handleNavigateTo = () => {
+    navigate(`/detail/${label}`)
+    window.scrollTo({ behavior: "smooth", top: 0, })
+  }
 
   return (
     <>

@@ -11,7 +11,7 @@ const Main = () => {
 		<>
 			<Header />
 			<Programs />
-			<Coaches />
+			{/* <Coaches /> */}
 			<Gallery />
 			<Footer />
 		</>

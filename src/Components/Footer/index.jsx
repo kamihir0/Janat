@@ -37,6 +37,10 @@ const Footer = () => {
 
 					</div>
 					<div>
+						<h2>Контакты</h2>
+						<p>(+996)-556-01-99-81</p>
+					</div>
+					<div>
 						<h2>АДРЕС</h2>
 						<p>​Г.Ош, Алишера Навои, 68/1</p>
 					</div>
@@ -45,19 +49,12 @@ const Footer = () => {
 						<div>
 							{
 								mess.map(({ id, route, icon }) => (
-									<a href={route} key={id}>
+									<a href={route} key={id} target='_blank'>
 										{icon}
 									</a>
 								))
 							}
 						</div>
-					</div>
-				</div>
-				<div className={cls.bottomFooter}>
-					<div className={cls.bottomFooterContent}>
-						<h4>
-							<span>Copyright</span> © <span>Janat</span> Fitnes club
-						</h4>
 					</div>
 				</div>
 			</div>
