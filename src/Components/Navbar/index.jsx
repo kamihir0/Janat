@@ -54,6 +54,7 @@ const Navbar = () => {
                   </Link>
                 </li>
               ))}
+              <li><a href='tel:0556160404'>Позвонить</a> <FaPhone /></li>
             </ul>
           </div>
         )
