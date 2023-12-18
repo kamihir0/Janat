@@ -1,4 +1,5 @@
 .Footer {
+	width: auto;
 	height: 300px;
 	padding: 4rem 4rem 12px 4rem;
 	background-color: black;
@@ -8,7 +9,6 @@
 	justify-content: space-between;
 
 	@media (max-width:1305px) {
-		width: 100%;
 		padding: 2rem 2rem 0px 2rem;
 		justify-content: space-between;
 

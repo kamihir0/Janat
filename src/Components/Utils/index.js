@@ -9,11 +9,11 @@ export const links = [
     title: 'Программы',
     to: 'program'
   },
-  {
-    id: 2,
-    title: 'Тренеры',
-    to: 'сoach'
-  },
+  // {
+  //   id: 2,
+  //   title: 'Тренеры',
+  //   to: 'сoach'
+  // },
   {
     id: 3,
     title: 'Галерея',
