@@ -5,7 +5,6 @@ import { FaTimes } from 'react-icons/fa';
 // import { CiMenuBurger } from "react-icons/ci";
 import { RiMenu3Fill } from "react-icons/ri";
 import { LiaTimesSolid } from "react-icons/lia";
-import { slide as Menu } from 'react-burger-menu';
 import cls from './Navbar.module.scss';
 import { links } from '../Utils';
 import { Link } from 'react-scroll'
